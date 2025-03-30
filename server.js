@@ -8,17 +8,9 @@ import wishlistRoutes from "./routes/wishlistRoutes.js";
 dotenv.config();
 
 const app = express();
-app.get("/", (req, res) => {
-  res.send("Hello from server!");
-});
-// Middleware
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://ecom-taupe-tau.vercel.app"],
-    credentials: true,
-  })
-);
 
+// Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
