@@ -8,7 +8,9 @@ import wishlistRoutes from "./routes/wishlistRoutes.js";
 dotenv.config();
 
 const app = express();
-
+app.get("/", (req, res) => {
+  res.send("Hello from server!");
+});
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
