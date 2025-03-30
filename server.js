@@ -12,7 +12,13 @@ app.get("/", (req, res) => {
   res.send("Hello from server!");
 });
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://ecom-taupe-tau.vercel.app"],
+    credentials: true,
+  })
+);
+
 app.use(bodyParser.json());
 
 // Routes
